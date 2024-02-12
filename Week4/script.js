@@ -90,6 +90,20 @@ import { OrbitControls } from "OrbitControls"
 
         planeFolder
             .add(planeMaterial, 'wireframe')
+
+        planeFolder 
+            .add(plane.position, 'x')
+            .min(-5)
+            .max(5)
+            .step(0.1)
+            .name('Plane-X')
+        
+            planeFolder 
+            .add(plane.position, 'y')
+            .min(-5)
+            .max(5)
+            .step(0.1)
+            .name('Plane-y')
         
        
 
@@ -151,6 +165,13 @@ const clock= new THREE.Clock()
             {
                 testSphere.position.y = Math.sin(elapsedTime * uiObject.speed)*uiObject.distance
                 testSphere.position.x = Math.sin(elapsedTime *5)*8
+            }
+
+            //Animate plane
+            if(uiObject.play)
+            {
+                plane.position.y = Math.sin(elapsedTime * uiObject.speed)*uiObject.distance
+                plane.position.x = Math.sin(elapsedTime * 5)*8
             }
 
             //Renderer
