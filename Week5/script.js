@@ -92,12 +92,7 @@ const sunMaterial = new THREE.MeshLambertMaterial({
 const sun = new THREE.Mesh(sunGeometry, sunMaterial)
 scene.add(sun)
 
-//Cones
-const Geometry = new THREE.ConeGeometry();
-const material = new THREE.MeshBasicMaterial();
-const cone = new THREE.Mesh(geomerty,material);
-cone.position(6,1,0)
-scene.add(cone)
+
 
 
 /***********
