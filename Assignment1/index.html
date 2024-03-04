@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<head>
+    <title>Assinment 1</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- three.js importmap -->
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://ga.jspm.io/npm:three@0.158.0/build/three.module.js",
+                "OrbitControls": "https://ga.jspm.io/npm:three@0.158.0/examples/jsm/controls/OrbitControls.js",
+                "lil-gui": "https://ga.jspm.io/npm:lil-gui@0.19.1/dist/lil-gui.esm.js"
+            }
+        }
+    </script>
+
+    <!-- three.js scene -->
+    <script src="script.js" type="module"></script>
+</head>
+<body>
+    <h1>Interactive Essay</h1>
+    <h2> Yigit Sirin</h2>
+
+    <!-- Part one -->
+    <section id="part-one">
+        <h2>1. Flatness</h2>
+<!--First paragraph-->
+        <p> Every morning, a triangle <span class="clickable" id="first-change">appears</span> at the bottom of the cave wall. This triangle has appeared every morning for as long 
+            as the people in the cave have been around. Occasionally, someone spends days, weeks, and even months trying to figure out why it's there, its purpose, and where it comes 
+            from. Most have concluded that a triangle appears in the bottom corner of their cave every morning, and no one touches it. Eventually, later in the day, the triangle is gone 
+            until the next morning. The triangle has become a small part of their lives that gets looked over.</p>
+<!--Second paragraph-->
+        <p> For the first time one morning, after the triangle appeared as usual, it <span class="clickable" id="second-change">started changing</span>. The triangle had begun spinning 
+            and moving left to right; the triangle was going out one side of the cave wall and reappearing on the other. The people in the cave were frightened by this change as it had 
+            never happened before. Some assumed the worst by thinking the end was near; others thought liberation was finally arriving to them. Although shocked and scared by the 
+            changes, the people in the cave are in awe of the experience, knowing no other generation has experienced what is happening. However, after days of this pattern, the 
+            people in the cave lost hope and continued the way they were, which added to the new movement of The Cryptic Triad. </p>
+
+        <p><span class="clickable" id="continue-reading">Continue reading</span></p>
+    </section>
+
+    <!-- Part two-->
+    <section id="part-two" class="hidden">
+        <h2>2. Seeing Double</h2>   
+<!--First paragraph-->          
+        <p> The people outside the cave see this blue, glowing orb always in the air next to an octahedron and a cone shape. One day, the octahedron starts to spin, and as it turns, 
+            the glowing orb begins to move left and right as if there's a magnetic field pushing it side to side. There is a cone in the air with the orb and octahedron. 
+            The glowing orb never gets close to the cone; however, after the orb and octahedron change, 
+            <span class="clickable" id="third-change">the cone also begins rotating</span> As if it is some satellite  dish searching for a connection, but the question is, what 
+            could it be trying to connect with?</p>
+   
+    
+<!--Second paragraph-->
+        <p>The people in the cave always thought there was only one triangle, even when they started seeing a triangle appear on both ends of the wall. They never understood that 
+            the glowing orb was the one that was moving; they only saw it as the triangle, which was actually an octahedron moving side to side and magically going out one end and 
+            coming back through the other. However, the reality was there were always two objects, an octahedron, and a cone, and neither of them ever moved side to side; it was always 
+            the glowing blue orb that would move, making them believe the octahedron was moving. The bright blue orb 
+            eventually<span class="clickable" id="fourth-change"> dies and falls </span> like a deflated balloon, killing the triangle in the cave and bringing the octahedron and cone to a halt.</p>
+
+        <p><span class="clickable" id="restart">Restart</span></p>
+    </section>
+    
+
+    <canvas class="webgl"></canvas>
+</body>
+</html>
