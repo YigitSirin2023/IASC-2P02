@@ -28,7 +28,7 @@ color: white;
     flex-direction: column;
     justify-content: center;
     height: 100vh;
-    font-size: 60px;
+    font-size: 45px;
     padding-left: 50%;
 }
 
@@ -47,4 +47,12 @@ color: white;
 
 .hidden{
     display: none;
+}
+
+#secondparagraph{
+    font-size: 30px;
+}
+
+#thirdparagraph{
+    font-size: 30px;
 }

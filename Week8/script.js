@@ -34,7 +34,7 @@ window.addEventListener('resize',() =>{
     
     //Update renderer
     renderer.setSize(Sizes.width, Sizes.height)
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))  
 
 })
 
