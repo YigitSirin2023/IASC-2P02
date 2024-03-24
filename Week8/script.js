@@ -80,6 +80,7 @@ scene.add(cube)
 
 
 
+
 /*********************
 ** DOM Interactions **
 *********************/
@@ -123,7 +124,7 @@ const animation = () =>{
     //Part 2
     if(domObject.part === 2){
         if(cube.rotation.y <= Math.PI * 0.5){
-          cube.rotation.y += 0.02  
+            cube.rotation.y += 0.02  
         }
         
 
