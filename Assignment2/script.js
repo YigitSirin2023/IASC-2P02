@@ -1,3 +1,4 @@
+
 import * as THREE from "three"
 import * as dat from "lil-gui"
 import { OrbitControls } from "OrbitControls"
@@ -57,8 +58,8 @@ scene.add(directionalLight)
 const cubeGeometry = new THREE.BoxGeometry(0.5, 0.5, 0.5)
 
 // Cube Materials
-const redMaterial = new THREE.MeshStandardMaterial({
-    color: new THREE.Color('red')
+const pinkMaterial = new THREE.MeshStandardMaterial({
+    color: new THREE.Color('pink')
 })
 const greenMaterial = new THREE.MeshStandardMaterial({
     color: new THREE.Color('green')
@@ -90,9 +91,9 @@ let preset = {}
 const uiobj = {
     text: '',
     textArray: [],
-    term1: 'Romeo',
-    term2: 'Tybalt',
-    term3: 'broom',
+    term1: 'love',
+    term2: 'passion',
+    term3: 'devotion',
     rotateCamera: false
 }
 
@@ -102,14 +103,14 @@ const parseTextandTerms = () =>
 {
     // Strip periods and downcase text
     const parsedText = uiobj.text.replaceAll(".", "").toLowerCase()
-    //console.log(parsedText)
+    
 
     // Tokenize text
     uiobj.textArray = parsedText.split(/[^\w']+/)
-    //console.log(uiobj.textArray)
+    
 
     // Find term 1
-    findTermInParsedText(uiobj.term1, redMaterial)
+    findTermInParsedText(uiobj.term1, pinkMaterial)
 
     // Find term 2
     findTermInParsedText(uiobj.term2, greenMaterial)
@@ -126,7 +127,7 @@ const findTermInParsedText = (term, material) =>
         //console.log(i, uiobj.textArray[i])
         if(uiobj.textArray[i] === term)
         {
-         //console.log(i, term)
+
          // convert i into n, which is a value between 0 and 20
          const n = (100 / uiobj.textArray.length) * i * 0.2
          
@@ -141,7 +142,7 @@ const findTermInParsedText = (term, material) =>
 }
 
 // Load source text
-fetch("https://YigitSirin2023.github.io/IASC-2P02/blob/main/Assets/RandJ.txt")
+fetch("https://yigitsirin2023.github.io/IASC-2P02/Assignment2/Assets/RandJ.txt")
     .then(response => response.text())
     .then((data) =>
     {
@@ -160,7 +161,7 @@ const ui = new dat.GUI({
     const cubesFolder = ui.addFolder('Filter Terms')
 
     cubesFolder
-        .add(redMaterial, 'visible')
+        .add(pinkMaterial, 'visible')
         .name(`${uiobj.term1}`)
 
     cubesFolder

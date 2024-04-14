@@ -58,14 +58,14 @@ scene.add(directionalLight)
 const sphereGeometry = new THREE.SphereGeometry(0.5)
 
 // Sphere Materials
+const redMaterial = new THREE.MeshStandardMaterial({
+    color: new THREE.Color('red')
+})
 const orangeMaterial = new THREE.MeshStandardMaterial({
     color: new THREE.Color('orange')
 })
-const pinkMaterial = new THREE.MeshStandardMaterial({
-    color: new THREE.Color('pink')
-})
-const aquaMaterial = new THREE.MeshStandardMaterial({
-    color: new THREE.Color('aqua')
+const greenMaterial = new THREE.MeshStandardMaterial({
+    color: new THREE.Color('green')
 })
 
 const drawSphere = (i, material) =>
@@ -93,9 +93,9 @@ let preset = {}
 const uiobj = {
     text: '',
     textArray: [],
-    term1: 'dudley',
-    term2: 'snape',
-    term3: 'malfoy',
+    term1: 'death',
+    term2: 'murder',
+    term3: 'poison',
     rotateCamera: false,
     animateBubbles: false
 }
@@ -106,20 +106,20 @@ const parseTextandTerms = () =>
 {
     // Strip periods and downcase text
     const parsedText = uiobj.text.replaceAll(".", "").toLowerCase()
-    //console.log(parsedText)
+
 
     // Tokenize text
     uiobj.textArray = parsedText.split(/[^\w']+/)
-    //console.log(uiobj.textArray)
+
 
     // Find term 1
-    findTermInParsedText(uiobj.term1, orangeMaterial)
+    findTermInParsedText(uiobj.term1, redMaterial)
 
     // Find term 2
-    findTermInParsedText(uiobj.term2, pinkMaterial)
+    findTermInParsedText(uiobj.term2, orangeMaterial)
 
     // Find term 3
-    findTermInParsedText(uiobj.term3, aquaMaterial)
+    findTermInParsedText(uiobj.term3, greenMaterial)
 
 }
 
@@ -127,10 +127,10 @@ const findTermInParsedText = (term, material) =>
 {
     for (let i=0; i < uiobj.textArray.length; i++)
     {
-        //console.log(i, uiobj.textArray[i])
+
         if(uiobj.textArray[i] === term)
         {
-         //console.log(i, term)
+
          // convert i into n, which is a value between 0 and 20
          const n = (100 / uiobj.textArray.length) * i * 0.2
          
@@ -144,8 +144,8 @@ const findTermInParsedText = (term, material) =>
     }
 }
 
-// Load source text
-fetch("https://www.gutenberg.org/cache/epub/1777/pg1777.txt")
+// source text
+fetch("https://yigitsirin2023.github.io/IASC-2P02/Assignment2/Assets/RandJ.txt")
     .then(response => response.text())
     .then((data) =>
     {
@@ -168,11 +168,11 @@ const ui = new dat.GUI({
         .name(`${uiobj.term1}`)
 
     spheresFolder
-        .add(pinkMaterial, 'visible')
+        .add(redMaterial, 'visible')
         .name(`${uiobj.term2}`)
 
     spheresFolder
-        .add(aquaMaterial, 'visible')
+        .add(greenMaterial, 'visible')
         .name(`${uiobj.term3}`)
 
     spheresFolder

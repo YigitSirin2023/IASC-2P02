@@ -38,6 +38,11 @@ const testsphere = new THREE.Mesh(sphereGeometry, sphereMaterial)
 testsphere.position.set(0,0,-5)
 scene.add(testsphere)
 
+
+
+
+
+
 //TestSquare
 // const squareGeometry = new THREE.SquareGeometry(1)
 // const squareMaterial = new THREE.MeshNormalMaterial()
